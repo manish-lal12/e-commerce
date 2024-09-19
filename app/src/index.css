@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes load1 {
+    0%, 80%, 100% {
+        box-shadow: 0 0;
+        height: 4em;
+    }
+    40% {
+        box-shadow: 0 -2em;
+        height: 5em;
+    }
+}
+
+.loader {
+    animation: load1 1s infinite ease-in-out;
+    animation-delay: -0.16s;
+}
+
+.loader::before, .loader::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 1em;
+    height: 4em;
+    background: blue;
+}
+
+.loader::before {
+    left: -1.5em;
+    animation: load1 1s infinite ease-in-out;
+    animation-delay: -0.32s;
+}
+
+.loader::after {
+    left: 1.5em;
+    animation: load1 1s infinite ease-in-out;
+} 
